@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- ACTIONS -->
+    <record id="helpdesk_ticket_action" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="view_type">form</field> --> <!-- En v13 ya no se usa -->
+    </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_hd_ticket" name="Tickets" action="helpdesk_ticket_action" sequence="100" />
+
+</odoo>
