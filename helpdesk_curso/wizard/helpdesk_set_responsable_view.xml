@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="wizard_helpdesk_form_view" model="ir.ui.view">
+        <field name="name">wizard.helpdesk.set.responsable.view</field>
+        <field name="model">helpdesk.set.responsable</field>
+        <field name="arch" type="xml">
+            <form>
+                You already have <field name="tickets_qty" readonly="1"/> tickets.
+                <p>Are you sure?</p>
+                <footer>
+                    <button string="Confirm" name="set_responsable" type="object"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_helpdesk_form_action" model="ir.actions.act_window">
+        <field name="name">wizard.helpdesk.set.responsable.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.set.responsable</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_helpdesk_form_view"></field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

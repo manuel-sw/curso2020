@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <!-- VIEWS -->
+
+    <!-- ACTIONS -->
+    <record id="helpdesk_ticket_stage_action" model="ir.actions.act_window">
+        <field name="name">Ticket Stage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket.stage</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="view_type">form</field> --> <!-- En v13 ya no se usa -->
+    </record>
+
+    <menuitem id="helpdesk_menu_ticket_stage" action="helpdesk_ticket_stage_action" parent="helpdesk_menu_tickets" sequence="20" />
+
+</odoo>

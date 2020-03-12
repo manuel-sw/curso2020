@@ -10,7 +10,13 @@
     'data': [
         "security/helpdesk_security.xml",
         "security/ir.model.access.csv",
+        "wizard/helpdesk_set_responsable_view.xml",
         "views/helpdesk_ticket_views.xml",
+        "views/helpdesk_ticket_stage_views.xml",
+        "views/helpdesk_team_views.xml",
+        "views/res_users_views.xml",
+        "views/menus.xml",
+
     ],
     'application': True,
     'installable': True,
