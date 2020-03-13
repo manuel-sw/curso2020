@@ -42,7 +42,13 @@ class HelpdeskTicket(models.Model):
         #import wdb; wdb.set_trace();
         ticket_obj = self.env['helpdesk.ticket']
         for ticket in self:
-            tickets = ticket_obj.search([('responsable_id', '=', ticket.responsable_id.id)])
+            # A o B o C -> (A o B) o C -> o (A, B) o C -> oo ((A, B), C)
+            tickets = ticket_obj.search([
+                '|',
+                    '|',
+                        ('responsable_id', '=', ticket.responsable_id.id),
+                        ('responsable_id', '=', False),
+                    ('stage_id', '=', ticket.stage_id.id)])
             ticket.tickets_qty = len(tickets)
 
 
