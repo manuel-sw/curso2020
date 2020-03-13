@@ -6,7 +6,7 @@ class HelpdeskTeam(models.Model):
 
     name = fields.Char(string='Name', required=True)
 
-    user_qty = fields.Integer(string="User quantity", compute='_compute_user_qty', store=True)
+    user_qty = fields.Integer(string="User quantity", compute='_compute_user_qty')
 
     ticket_ids = fields.One2many(comodel_name='helpdesk.ticket', inverse_name='team_id', string='Tickets')
 
